@@ -1,0 +1,16 @@
+main.wrraper {
+    width: 250px;
+
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+}
+
+.app-form {
+    border-right: 2px solid #aaaaaa;
+   
+  }
+
+  .corunica {
+    background-color: rgb(109, 105, 100)
+  }

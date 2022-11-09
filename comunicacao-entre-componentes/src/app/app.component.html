@@ -1,0 +1,11 @@
+<card  titulo="Coxinha " banner="https://media.istockphoto.com/photos/coxinha-de-frango-3-picture-id1424050516?s=612x612" corBtn="red"></card> <br>
+<card titulo="Pizza com refri" banner="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"></card> <br>
+<card username="João Flavio" titulo="ACARAJÉ" banner="https://media.istockphoto.com/photos/brazilian-food-acaraje-with-typical-fillings-picture-id1367420761?s=612x612"></card> <br>
+<card></card> <br>
+<app-uploader (uploadCompleto)="mostrarMsg()"></app-uploader>
+
+<!--Ao cliclar no botão, desejp executar o  método click() do input file-->
+<!--Variaveiss de Template- Template Variables-->
+<input type="file" #inputFile >
+<button id="btn" (click)="inputFile.click()"> Selecionar um arquivo</button>
+

@@ -1,0 +1,81 @@
+<!--ngIF-->
+<!--
+    ngIf SERVE PARA QUE A PARTIR DE UMA DETERMINADA CONDIÇÃO BOOLEANA
+    UM ELEMENTO HTML OU COMPONENTE APAREÇE NA SUA TELA OU NÃO
+-->
+
+<div class="card" *ngIf="mostrarProduto == true; else conteudoAlternativo">
+    <img [src]="prod.imagem" alt="PcGamerCompleto" class="card-image-top">
+    <div class="card-body">
+        <h5 class="card-title"> {{prod.nome}}</h5>
+        <h5 class="card-subtitle  text-muted">{{prod.preco}} </h5>
+        <!--
+            menor ou igual a 10 -> vermelho
+            maior que 10 e menor ou igual   a 30 -> amarelo
+            maior que 30 e menor que 100 -> azul
+            maior que 100 -> verde
+
+            azul -> bg-primary
+            amarelo -> bg-warning
+            vermelho -> bg-danger
+            verde -> bg-success
+        -->
+
+        <!--ngClass
+        
+        ngClass te permite adicionar ou remover classes de um elemento da partir de condições lógicas (booleanas)-->
+
+
+        <!--*ng = Diretiva estrutural
+                                                    [ng] = Diretiva de atributo
+                                                
+                                                [ngClass]=""
+
+
+
+                                                
+                                                      <---- -ISTO é UMA DIRETIVA            -->
+        <span class="badge mb-1 " [ngClass]="{
+            'bg-danger': prod.estoque<=10 ,
+             'bg-warning': prod.estoque<=30,     
+             'bg-primary': prod.estoque<=100,              
+                                                
+             'bg-success': prod.estoque>100
+            
+        }">
+            {{prod.estoque}}
+        </span>
+        <p class="card-text text-truncate">
+            {{prod.descricao}}
+        </p>
+        <div class="d-flex align-items-center ">
+            <button class="btn btn-sm btn-danger d-flex justify-content-start" (click)="esconderProduto ()">
+                Esconder Produto
+            </button>
+
+            <button class=" ms-5 btn btn-sm" (click)="emitirEventoDeletar()" >
+                &times;
+            </button>
+        </div>
+
+    </div>
+</div>
+ <!--
+    ng-template serve como um componente auxiliar
+    que nos permite criar a estrutura 'else'de algum
+    *ngif
+ -->
+<ng-template #conteudoAlternativo>
+    <div class="card">
+        <div class="card-body">
+          <p class="card-text">O produto {{ prod.nome }} não aparecerá para os usuários desse site</p>
+          <button class="btn btn-danger"(click)="mostrarPdt()" >Mostrar Novamente</button>
+        </div>
+      </div>
+</ng-template>
+   <!-- <button class="btn btn-sm btn-danger" *ngIf="mostrarProduto == false" (click)="mostrarPdt ()">
+        <div>
+            <p> Este produto esta oculto, clique abaixo para vizualizar </p>
+        </div>
+        Mostrar Produto
+    </button> --> 

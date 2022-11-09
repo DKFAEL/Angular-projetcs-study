@@ -1,0 +1,50 @@
+<section class="section">
+    
+    <div class="card ">
+        <div class="cartao-frente">
+            
+            <p>{{nomeCartao.value}}</p>
+            <p>{{numeroCartao.value}}</p>
+            <p>{{date.value}}</p>
+
+            
+        </div>
+        <div class="cartao-verso">
+    
+        </div>
+    </div>
+
+
+
+  
+       <div class="forms">
+            <div class="mb-3">
+                <input type=" text" #nomeCartao (input)="0" class="form-control" id="formGroupExampleInput" placeholder="nome do cartão" required  >
+                <label for="formGroupExampleInput" class="form-label">Nome do Cartão</label><br>
+                
+            </div>
+            <div class="mb-3">
+                <input type="text" #numeroCartao (input)="0" class="form-control" id="formGroupExampleInput2" placeholder="0000 0000 0000 0000" required maxlength="19">
+                <label for="formGroupExampleInput2" class="form-label">Número do cartão</label> <br>
+                
+            </div>
+
+            <div class="mb-3 mt-5">
+                <input type="" class="form-control" id="formGroupExampleInput2" placeholder="CVC" maxlength="2">
+                <label for="formGroupExampleInput2" class="form-label">MM</label> <br>        
+            </div>
+
+            <div class="mb-3 mt-5">
+                <input type="" class="form-control" id="formGroupExampleInput2" placeholder="CVC" maxlength="2">
+                <label for="formGroupExampleInput2" class="form-label">AA</label> <br>
+                
+            </div>
+
+            <div class="mb-3 mt-5">
+                <input type="date" #date (input)="0" class="form-control" id="formGroupExampleInput2" placeholder="CVC">
+                <label for="formGroupExampleInput2" class="form-label">CVC</label> <br>
+                <input type="date" #date (input)="0" class="form-control" id="formGroupExampleInput2" placeholder="CVC">
+            </div>
+
+        </div>
+</section>
