@@ -1,12 +1,26 @@
-<mat-card class="card" *ngFor="let item of pdt">
-    <mat-card-title-group>
-      <mat-card-title> {{item.nome}} </mat-card-title>
-      <mat-card-subtitle> ID: {{item.id}} </mat-card-subtitle>
-
-      <img mat-card-sm-image src= 'https://igp.rs.gov.br/themes/modelo-noticias/images/outros/GD_imgSemImagem.png' *ngIf="item.foto == '' " class="img">
-    </mat-card-title-group>
+<main class="container">
+  <mat-card *ngFor="let prod of produtos">
+    <img [src]="prod.foto || altImg" [alt]="prod.nome" mat-card-image>
+    <mat-card-subtitle>{{ prod.nome }}</mat-card-subtitle>
     <mat-card-content>
-       <p> {{ item.descricao}} </p>
-       <p> R$:{{item.preco}} </p>
+      <p class="preco">
+        <strong>{{ prod.preco | currency:'BRL' }}</strong>
+      </p>
+      <p class="desc">
+        {{ prod.descricao }}
+      </p>
     </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+
+          <!--prop-->
+      
+      <a  [routerLink]=" '/produtos/'+ prod.id" mat-stroked-button color="primary" matTooltip="Editar Produto">
+        <mat-icon>edit</mat-icon>
+      </a>
+      <button mat-stroked-button color="warn"matTooltip="Deletar Produto">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
   </mat-card>
+</main>

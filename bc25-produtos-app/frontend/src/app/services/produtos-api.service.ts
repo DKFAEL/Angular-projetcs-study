@@ -18,5 +18,10 @@ export class ProdutosApiService {
   listarProdutos() {
     return this.http.get<Produto[]>(this.baseUrl)
   }
+
+  procurarPorId(id: number){
+    // http://localhost:300/produtos/idProduto
+    return this.http.get<Produto>(` ${this.baseUrl}/${id}`)
+  }
 }
 
