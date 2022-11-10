@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-novo-produto',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovoProdutoComponent implements OnInit {
 
+
+  produtoForm: FormGroup = new FormGroup ({
+    nome: new FormControl('',[Validators.required]),
+    preco: new FormControl('',[Validators.required]),
+    descricao: new FormControl('',[Validators.required]), 
+    foto: new FormControl('')
+  })
   constructor() { }
 
   ngOnInit(): void {
