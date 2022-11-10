@@ -23,5 +23,9 @@ export class ProdutosApiService {
     // http://localhost:300/produtos/idProduto
     return this.http.get<Produto>(` ${this.baseUrl}/${id}`)
   }
+
+  criarProduto(prod: Produto){
+    return this.http.post<Produto>(this.baseUrl , prod ) // POST precisa de 2 parametros. EX: BaseUrl e o parametro prod
+  }
 }
 

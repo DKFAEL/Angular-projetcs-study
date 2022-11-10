@@ -139,6 +139,20 @@
       "preco": "949.00",
       "descricao": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
       "foto": ""
+    },
+    {
+      "nome": "Computador",
+      "preco": 2400,
+      "descricao": "Pc Gamer da casas bahia",
+      "foto": "https://www.promoinfo.com.br/img/anuncios/267403.jpg",
+      "id": 21
+    },
+    {
+      "nome": "DKFAEL",
+      "preco": 1111,
+      "descricao": "",
+      "foto": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fs.yimg.com%2Fny%2Fapi%2Fres%2F1.2%2Fwjltod2CeN1ftS7n2iToEQ--%2FYXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNw--%2Fhttps%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2022-07%2F2749d5a0-fec7-11ec-9f7f-e5eef821754a&imgrefurl=https%3A%2F%2Fbr.financas.yahoo.com%2Fnoticias%2Fdia-da-pizza-redes-oferecem-pizzas-pela-metade-do-preco-e-outros-descontos-veja-143321029.html&tbnid=klpDW1QxB0uDeM&vet=12ahUKEwjE9pzrvqT7AhVrNrkGHapsDbMQMygIegUIARCJAg..i&docid=2lbiOhuX6_XJDM&w=640&h=427&q=pizza&ved=2ahUKEwjE9pzrvqT7AhVrNrkGHapsDbMQMygIegUIARCJAg",
+      "id": 22
     }
   ]
 }
