@@ -12,10 +12,8 @@
     </mat-card-content>
     <mat-divider></mat-divider>
     <mat-card-actions>
-
-          <!--prop-->
-      
-      <a  [routerLink]=" '/produtos/'+ prod.id" mat-stroked-button color="primary" matTooltip="Editar Produto">
+      <!-- /produtos/id -->
+      <a [routerLink]="'/produtos/' + prod.id" mat-stroked-button color="primary" matTooltip="Editar Produto">
         <mat-icon>edit</mat-icon>
       </a>
       <button mat-stroked-button color="warn"matTooltip="Deletar Produto">
@@ -23,4 +21,7 @@
       </button>
     </mat-card-actions>
   </mat-card>
+  <button routerLink="/produtos/novo" mat-mini-fab color="accent" id="go-form" matTooltip="Adicionar Produto" matTooltipPosition="left">
+    <mat-icon>add</mat-icon>
+  </button>
 </main>
