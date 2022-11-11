@@ -27,5 +27,9 @@ export class ProdutosApiService {
   criarProduto(prod: Produto){
     return this.http.post<Produto>(this.baseUrl , prod ) // POST precisa de 2 parametros. EX: BaseUrl e o parametro prod
   }
+
+  deletarPorId(id: number){
+    return this.http.delete<void>(`${this.baseUrl}/${id}`)
+  }
 }
 
