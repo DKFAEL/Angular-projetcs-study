@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent  {
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.objStyle['color'] = 'blue';
+    }, 5000)
+    
+   }
 
   public user: string = 'Rafael Nunes'
 
@@ -19,5 +24,36 @@ export class HomeComponent  {
   public clicar(): void{
     alert("Cliclou");
   }
+
+  public objStyle: any = {
+    'font-size': '10px',
+    'color': 'red'
+  }
+
+  public isError: boolean = false;
+ public classCor: string = "green";
+
+ public sapinho: boolean = true;
+ public mudarSapinho(): void{
+  this.sapinho = !this.sapinho;
+ }
+
+ public peixes: string[] =[
+ "tubarão",
+ "polvo",
+ "peixe palhaço",
+ "baiacu",
+ "lula",
+ "camarão"
+ ];
+
+ public textoPipe: string = 'Texto de Exemplo(pipe)';
+ public numberPipe: number = 30.3334;
+ public nowPipe = new Date ();
+ public objPipe = { 
+  nome: 'Rafael Nunes',
+  idade: 23,
+  area: 'Tecnologia'
+ }
 
 }
