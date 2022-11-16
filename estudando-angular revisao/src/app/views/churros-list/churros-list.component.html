@@ -1,0 +1,51 @@
+<app-header></app-header> <br>
+
+<h2>Onde posso encontrar churros?</h2> <br> <br>
+
+<h2>Pontos de vendas cadastrados</h2>
+<ul>
+    <li>
+
+    </li>
+</ul>
+<mat-card>
+    <mat-card-header class="centro">
+        <mat-card-title>
+            Cadastre um novo produto de venda
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="centro">
+        <form action="#" class="form" [formGroup]="churrosRslt">
+            <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput   formControlName="nome">
+            </mat-form-field> <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Estado</mat-label>
+                <input type="text" matInput formControlName="estado">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Cidade</mat-label>
+                <input type="text" matInput formControlName="cidade">
+            </mat-form-field> <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Ponto de venda</mat-label>
+                <input type="text" matInput formControlName="pontoVenda">
+            </mat-form-field> <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Começa as</mat-label>
+                <input type="number" matInput formControlName="comeca">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Termina as</mat-label>
+                <input type="number" matInput formControlName="termina">
+            </mat-form-field> <br>
+            <button (click)="listarChurros()" type="submit" mat-stroked-button color="warn">Cadastrar</button>
+        </form>
+    </mat-card-content>
+</mat-card>

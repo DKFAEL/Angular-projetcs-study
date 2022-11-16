@@ -14,6 +14,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { CalcNotaComponent } from './views/calc-nota/calc-nota.component';
 import { FilmsListComponent } from './views/films-list/films-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChurrosListComponent } from './views/churros-list/churros-list.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     FormsComponent,
     CalcNotaComponent,
-    FilmsListComponent
+    FilmsListComponent,
+    ChurrosListComponent
     
   ],
   imports: [
