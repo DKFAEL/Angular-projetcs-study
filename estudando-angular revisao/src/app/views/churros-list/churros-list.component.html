@@ -3,9 +3,9 @@
 <h2>Onde posso encontrar churros?</h2> <br> <br>
 
 <h2>Pontos de vendas cadastrados</h2>
-<ul>
-    <li>
-
+<ul *ngIf="pontosDeChurros.length != 0; else listaVazia">
+    <li *ngFor="let ponto of pontosDeChurros">
+        {{ponto.nome}} - {{ponto.localizacao}} - {{ponto.cidade}} - {{ponto.estado}} - {{ponto.comecaAs}} - {{ponto.terminaAs}}
     </li>
 </ul>
 <mat-card>
@@ -33,17 +33,17 @@
 
             <mat-form-field appearance="fill">
                 <mat-label>Ponto de venda</mat-label>
-                <input type="text" matInput formControlName="pontoVenda">
+                <input type="text" matInput placeholder="Ex. Praça dos Estudantes" formControlName="pontoVenda">
             </mat-form-field> <br>
 
             <mat-form-field appearance="fill">
                 <mat-label>Começa as</mat-label>
-                <input type="number" matInput formControlName="comeca">
+                <input type="time" matInput formControlName="comeca">
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Termina as</mat-label>
-                <input type="number" matInput formControlName="termina">
+                <input type="time" matInput formControlName="termina">
             </mat-form-field> <br>
             <button (click)="listarChurros()" type="submit" mat-stroked-button color="warn">Cadastrar</button>
         </form>

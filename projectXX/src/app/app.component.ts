@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartaoDeCredito } from './interfaces/CartaoDeCredito';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'projectx';
+  formCartaoDeCredito: CartaoDeCredito = {
+    ano: ' ',
+    cvc: '',
+    mes: '',
+    nome: '',
+    numero: ''
+
+  }
 }
