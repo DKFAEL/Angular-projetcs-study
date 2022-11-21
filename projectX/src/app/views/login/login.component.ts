@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,11 @@ export class LoginComponent implements OnInit {
   public formLogin: FormGroup;
   
 
-  constructor(fb: FormBuilder, private AuthService: AuthService) {
+  constructor(
+    fb: FormBuilder, 
+    private AuthService: AuthService,
+    private notification: NotificationService,
+    private router: Router) {
     this.formLogin = fb.group({
       email: ['', [Validators.required]],
       senha: ['', [Validators.required]]
@@ -23,9 +30,18 @@ export class LoginComponent implements OnInit {
   }
 
 public signInGoogle (): void {
-  this.AuthService.authenticateByGoogle().subscribe(crendencials =>{
-    alert("Autenticado!");
+  this.AuthService.authenticateByGoogle().subscribe(credencials =>{
+    this.notification.ShowMessage("Bem-Vindo(a)!");
+    this.router.navigate(["/home"])
   })
+}
+ 
+public signInEmailAndPassword() {
+  const user: User = this.formLogin.value;
+  this.AuthService.authenticateByEmailAndPassword(user).subscribe(credencials => {
+    this.notification.ShowMessage("Bem-Vindo(a)!");
+    this.router.navigate(["/home"]);
+  });
 }
 
 }
