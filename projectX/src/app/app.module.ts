@@ -14,6 +14,8 @@ import { HomeComponent } from './views/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material/material.module';
 import { HeaderComponent } from './components/header/header.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { NewCollaboratorComponent } from './views/new-collaborator/new-collaborator.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     CadastrarUsuarioComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent,
+    NewCollaboratorComponent
   ],
   imports: [
     BrowserModule,
