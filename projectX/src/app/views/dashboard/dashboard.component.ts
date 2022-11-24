@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsComponent } from 'src/app/components/details/details.component';
 import { Collaborator } from 'src/app/models/collaborator';
 import { CollaboratorService } from 'src/app/services/collaborator.service';
 import { NotificationService } from 'src/app/services/notification.service';
@@ -15,7 +17,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private collaboratorService: CollaboratorService,
-    private notification: NotificationService
+    private notification: NotificationService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -35,5 +38,15 @@ this.collaboratorService.findAll().subscribe(collaborators =>{
       this.initilizeTable();
     })
   }
+
+  public openDetails(collaborator: Collaborator): void {
+    // ABRIR CAIXA DE DIALOGO COM INFORMAÇÕES DO COLABORADOR
+    this.dialog.open(DetailsComponent, {
+      width: "400px",
+      data: collaborator
+    })
+  }
+
+
 
 }

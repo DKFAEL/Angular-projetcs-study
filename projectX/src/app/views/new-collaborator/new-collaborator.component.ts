@@ -59,6 +59,7 @@ this.collaboratorService.createCollaborator(collaborator).subscribe(Response =>{
 public uploadFile(event: any): void {
   this.isLoadUpload = true;
   const file: File = event.target.files[0];
+  // FAZER UM UPLOAD DO ARQUIVO PARA FIREBASE
   this.uploadService.uploadFoto(file).subscribe(uploadResult  => {
     this.isLoadUpload = false;  
     const storageReference = uploadResult.ref;
