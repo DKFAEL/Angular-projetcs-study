@@ -29,3 +29,13 @@
 .btn-close:hover {
     background-color: #aa4747;
 }
+
+.upload-photo {
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid #BABABA;
+}
+
+.upload-photo::-webkit-file-upload-button {
+    display: none;
+}

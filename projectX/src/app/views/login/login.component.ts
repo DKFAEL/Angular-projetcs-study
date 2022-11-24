@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private notification: NotificationService,
     private router: Router) {
     this.formLogin = fb.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required]]
     })
    }
@@ -37,11 +37,15 @@ public signInGoogle (): void {
 }
  
 public signInEmailAndPassword() {
-  const user: User = this.formLogin.value;
+  if(this.formLogin.valid) {
+    const user: User = this.formLogin.value;
   this.AuthService.authenticateByEmailAndPassword(user).subscribe(credencials => {
     this.notification.ShowMessage("Bem-Vindo(a)!");
     this.router.navigate(["/home"]);
   });
+  } else {
+    this.notification.ShowMessage("Dados Invalidos. :(  ")
+  }
 }
 
 }

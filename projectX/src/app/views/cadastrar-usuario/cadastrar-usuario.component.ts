@@ -26,7 +26,7 @@ throw new Error('Method not implemented.');
       private notification: NotificationService
       ) {
     this.formCadastro = fb.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required]]
     })
    }
@@ -43,10 +43,14 @@ throw new Error('Method not implemented.');
   }
 
   public createUserEmailAndPassword(): void{
+   if(this.formCadastro.valid) {
     const user: User = this.formCadastro.value;
     this.AuthService.createUserEmailAndPassword(user).subscribe(Response =>{
       this.notification.ShowMessage("Usuário cadastro.");
       this.router.navigate(["/login"]);
     });
+   } else {
+    this.notification.ShowMessage("Dados Invalidos")
+   }
   }
 }
